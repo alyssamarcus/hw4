@@ -1,24 +1,26 @@
+<div class="display-6 mb-4">
 <h1>New Post</h1>
+</div>
 
 <%= form_with :model => @post do |form| %>
-  <p>
-    <%= form.label "title" %>
-    <%= form.text_field "title" %>
-  </p>
-  <p>
-    <%= form.label "description" %>
-    <%= form.text_field "description" %>
-  </p>
-  <p>
-    <%= form.label "posted_on" %>
-    <%= form.date_field "posted_on" %>
-  </p>
-  <div class="mb-3">
+<div class="mb-4">
+    <%= form.label "Title", :class => "form-label" %>
+    <%= form.text_field "title", :class => "form-control" %>
+  </div>
+    <div class="mb-4"
+    <%= form.label "Description", :class => "form-label" %>
+    <%= form.text_field "description", :class => "form-control" %>
+  </div>
+  <div class="mb-4">
     <% form.label "uploaded_image", :class => "form-label" %>
     <% form.file_field "uploaded_image", :class => "form-control"%>
   </div>
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class-"mb-4">
+    <%= form.label "posted_on", :class => "form-label"  %>
+    <%= form.date_field "posted_on", :class => "form-control" %>
+  </div>
+  <div class="mb-4">
+    <%= form.submit "Create Post", :class => "btn btn-primary" %>
+  </div>
   <%= form.hidden_field "place_id" %>
 <% end %>
