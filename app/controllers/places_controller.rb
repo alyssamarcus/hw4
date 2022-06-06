@@ -17,12 +17,11 @@ class PlacesController < ApplicationController
   if @current_user
     @place = Place.new
     @place["name"] = params["place"]["name"]
-    @place["user_id"] = @current_user["id"]
     @place.save
+    redirect_to "/places"
   else
     flash["notice"] = "Please login to add places"
-  end 
-    redirect_to "/places"
   end
+end
 
 end
